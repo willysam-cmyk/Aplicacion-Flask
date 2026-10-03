@@ -1,0 +1,253 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #eef2f7;
+    color: #1f2937;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 420px;
+    background: #ffffff;
+    border: 1px solid #d8dee8;
+    border-radius: 8px;
+    padding: 32px;
+    box-shadow: 0 12px 30px rgba(31, 41, 55, 0.12);
+}
+
+.login-title {
+    margin: 0 0 8px;
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    color: #123c69;
+}
+
+.login-subtitle {
+    margin: 0 0 28px;
+    font-size: 15px;
+    text-align: center;
+    color: #5f6b7a;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 700;
+    color: #27364a;
+}
+
+.form-group input {
+    width: 100%;
+    min-height: 46px;
+    border: 1px solid #c8d1de;
+    border-radius: 6px;
+    padding: 0 14px;
+    font-size: 15px;
+    color: #1f2937;
+    background: #ffffff;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.18);
+}
+
+.form-group input::placeholder {
+    color: #9aa5b1;
+}
+
+.login-button {
+    width: 100%;
+    min-height: 48px;
+    border: 0;
+    border-radius: 6px;
+    background: #2563eb;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.login-button:hover {
+    background: #1d4ed8;
+}
+
+.login-button:active {
+    transform: translateY(1px);
+}
+
+.login-message {
+    margin: 16px 0 0;
+    font-size: 14px;
+    text-align: center;
+}
+
+.login-message.error {
+    color: #b91c1c;
+}
+
+.login-message.success {
+    color: #047857;
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 16px;
+    }
+
+    .login-container {
+        padding: 24px;
+    }
+
+    .login-title {
+        font-size: 24px;
+    }
+}
+
+.home-container {
+    width: 100%;
+    max-width: 1100px;
+
+    display: flex;
+    gap: 30px;
+    align-items: stretch;
+}
+
+.public-panel {
+    flex: 1;
+
+    background: white;
+    border: 1px solid #d8dee8;
+    border-radius: 8px;
+
+    padding: 32px;
+
+    box-shadow: 0 12px 30px rgba(31, 41, 55, 0.12);
+
+    display: flex;
+    flex-direction: column;
+}
+
+.panel-title {
+    margin: 0;
+    color: #123c69;
+    font-size: 26px;
+}
+
+.panel-subtitle {
+    margin-top: 8px;
+    margin-bottom: 24px;
+    color: #5f6b7a;
+}
+
+.public-card {
+    text-decoration: none;
+    color: inherit;
+
+    border: 1px solid #d8dee8;
+    border-radius: 8px;
+
+    padding: 20px;
+    margin-bottom: 16px;
+
+    transition: all 0.2s ease;
+}
+
+.public-card:hover {
+    transform: translateY(-2px);
+
+    border-color: #2563eb;
+
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.15);
+}
+
+.public-card h3 {
+    margin: 0 0 8px;
+    color: #123c69;
+}
+
+.public-card p {
+    margin: 0;
+    color: #5f6b7a;
+}
+
+.login-container {
+    flex: 1;
+}
+
+@media (max-width: 900px) {
+
+    .home-container {
+        flex-direction: column;
+    }
+
+}
+
+body{
+    background-color:#f8f9fa;
+}
+
+
+/* Mensajes flash */
+
+.flash-messages-fixed {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    width: auto;
+    max-width: 80%;
+    pointer-events: none;
+}
+
+.flash-messages-fixed .alert {
+    pointer-events: auto;
+    margin-bottom: 10px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.organizador-dashboard .dashboard-card {
+    border-radius: 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.organizador-dashboard .dashboard-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12) !important;
+}
+
+.organizador-dashboard .btn {
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.organizador-dashboard .alert {
+    border-radius: 10px;
+    font-weight: 500;
+}

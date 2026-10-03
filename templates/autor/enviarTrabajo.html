@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="container py-5">
+    <div class="text-center mb-5">
+        <h1 class="display-6 fw-bold text-primary">
+            Enviar Trabajo de Investigación
+        </h1>
+        <p class="text-muted">
+            Complete el formulario para enviar su trabajo de investigación
+        </p>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow border-0">
+                <div class="card-body p-5">
+                    <form action="{{ url_for('enviarTrabajo') }}" method="POST" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="titulo" class="form-label">Título del Trabajo</label>
+                            <input type="text" class="form-control" id="titulo" name="titulo" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="resumen" class="form-label">Resumen</label>
+                            <textarea class="form-control" id="resumen" name="resumen" rows="4" required></textarea>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="area" class="form-label">Área de Investigación</label>
+                            <select class="form-select" id="area" name="area" required>
+                                <option value="" disabled selected>Seleccione un área</option>
+                                <option value="AE">Agroecología (AE)</option>
+                                <option value="CA">Comunicación Ambiental (CA)</option>
+                                <option value="EF">Ecofisiología (EF)</option>
+                                <option value="ES">Ecosistemas (ES)</option>
+                                <option value="RN">Recursos Naturales (RN)</option>
+                            </select>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="apellido" class="form-label">Apellido del Autor</label>
+                                <input type="text" class="form-control" id="apellido" name="apellido" required>
+                            </div>
+                            
+                            <div class="col-md-6 mb-3">
+                                <label for="nombre" class="form-label">Nombre del Autor</label>
+                                <input type="text" class="form-control" id="nombre" name="nombre" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="correo" class="form-label">Correo Electrónico del Autor</label>
+                            <input type="email" class="form-control" id="correo" name="correo" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="archivo" class="form-label">Archivo del Trabajo (PDF, DOC, DOCX)</label>
+                            <input type="file" class="form-control" id="archivo" name="archivo" accept=".pdf,.doc,.docx">
+                            
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-lg w-100">
+                            Enviar Trabajo
+                        </button>
+                    </form>
+
+                    <div class="text-center mt-4">
+                        <a href="{{ url_for('logout') }}" class="btn btn-outline-danger">
+                            Cancelar
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
